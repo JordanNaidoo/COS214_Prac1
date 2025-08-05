@@ -1,11 +1,36 @@
 #include "Canvas.h"
+#include "Shape.h"
+#include "Memento.h"
+
+Canvas::Canvas() {}
+
+Canvas::~Canvas() {
+	for (Shape* s : shapes)
+		delete s;
+	shapes.clear();
+}
+
+bool Canvas::addShape(Shape* shape) {
+	if (shape) {
+		shapes.push_back(shape);  //should we also create a new memento or is that main's job?
+		return true;
+	}
+	return false;
+}
 
 Memento* Canvas::captureCurrent() {
-	// TODO - implement Canvas::captureCurrent
-	throw "Not yet implemented";
+	return new Memento(shapes);
 }
 
 void Canvas::undoAction(Memento* prev) {
-	// TODO - implement Canvas::undoAction
-	throw "Not yet implemented";
+	if (prev) {
+		for (Shape* s : shapes) delete s; 
+		shapes.clear(); 
+
+		for (Shape* s : prev->shapes) {
+			if (s) 
+				shapes.push_back(s->clone()); 	
+		}
+		delete prev; 
+	}
 }
