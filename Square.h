@@ -13,6 +13,7 @@ private:
 	int position_y;
 
 public:
+	Square(int sidesize, string colour, int position_x, int position_y);
 	Shape* clone();
 };
 

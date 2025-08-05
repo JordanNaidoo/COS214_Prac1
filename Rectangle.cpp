@@ -6,6 +6,5 @@ Rectangle::Rectangle(int length, int width, string colour, int position_x, int p
 
 Shape *Rectangle::clone()
 {
-    // TODO - implement Rectangle::clone
-	throw "Not yet implemented";
+    return new Rectangle(*this);
 }

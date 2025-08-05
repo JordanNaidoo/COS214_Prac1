@@ -14,6 +14,7 @@ private:
 	string text;
 
 public:
+	Textbox(int length, int width, string colour, int position_x, int position_y, string text);
 	Shape* clone();
 };
 
