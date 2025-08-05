@@ -1,13 +1,14 @@
 #ifndef TEXTBOXFACTORY_H
 #define TEXTBOXFACTORY_H
 
-class TextboxFactory : ShapeFactory {
+#include "ShapeFactory.h"
 
+class TextboxFactory : public ShapeFactory {
 
-public:
-	Shape* createShape();
+	public:
+		Shape* createShape();
 
-	void toString();
+		void toString();
 };
 
 #endif

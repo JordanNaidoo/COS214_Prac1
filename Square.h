@@ -1,7 +1,9 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
-class Square : Shape {
+#include "Shape.h"
+
+class Square : public Shape {
 
 private:
 	int length;

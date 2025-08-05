@@ -1,7 +1,9 @@
 #ifndef TEXTBOX_H
 #define TEXTBOX_H
 
-class Textbox : Shape {
+#include "ShapeFactory.h"
+
+class Textbox : public Shape {
 
 private:
 	int length;

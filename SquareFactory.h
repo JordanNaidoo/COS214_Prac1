@@ -1,12 +1,13 @@
 #ifndef SQUAREFACTORY_H
 #define SQUAREFACTORY_H
 
-class SquareFactory : ShapeFactory {
+#include "ShapeFactory.h"
+
+class SquareFactory : public ShapeFactory {
 
 
 public:
 	Shape* createShape();
-
 	void toString();
 };
 

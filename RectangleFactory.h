@@ -1,13 +1,13 @@
 #ifndef RECTANGLEFACTORY_H
 #define RECTANGLEFACTORY_H
+#include "ShapeFactory.h"
 
-class RectangleFactory : ShapeFactory, ShapeFactory {
+class RectangleFactory : public ShapeFactory {
 
+	public:
+		Shape* createShape();
 
-public:
-	Shape* createShape();
-
-	void toString();
+		void toString();
 };
 
 #endif
