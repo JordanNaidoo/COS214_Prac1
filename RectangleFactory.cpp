@@ -1,4 +1,4 @@
-#include "..\..\..\Users\jn390\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214ClassDiagram\RectangleFactory.h"
+#include "RectangleFactory.h"
 
 Shape* RectangleFactory::createShape() {
 	// TODO - implement RectangleFactory::createShape

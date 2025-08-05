@@ -1,4 +1,4 @@
-#include "..\..\..\Users\jn390\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214ClassDiagram\SquareFactory.h"
+#include "SquareFactory.h"
 
 Shape* SquareFactory::createShape() {
 	// TODO - implement SquareFactory::createShape

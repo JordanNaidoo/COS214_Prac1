@@ -1,4 +1,4 @@
-#include "..\..\..\Users\jn390\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214ClassDiagram\Textbox.h"
+#include "Textbox.h"
 
 Shape* Textbox::clone() {
 	// TODO - implement Textbox::clone

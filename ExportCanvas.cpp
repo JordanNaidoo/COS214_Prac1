@@ -1,4 +1,4 @@
-#include "..\..\..\Users\jn390\AppData\Roaming\VisualParadigm\ws\teamwork_client\projects\COS214ClassDiagram\ExportCanvas.h"
+#include "ExportCanvas.h"
 
 void ExportCanvas::exportToFile() {
 	// TODO - implement ExportCanvas::exportToFile
