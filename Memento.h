@@ -10,10 +10,9 @@ class Memento {
 	private:
 		std::vector<Shape*> shapes;
 		friend class Canvas;
+		
+		public:
 		Memento(std::vector<Shape*> elements);
-
-	public:
-		Memento() {}
 		virtual ~Memento() {}
 };
 
