@@ -38,3 +38,9 @@ void Textbox::setText(string text)
     this->text = text;
 }
 
+std::string Textbox::toString() const
+{
+    return "Shape type: Textbox, length:" + std::to_string(length) + ", width:" + std::to_string(width) +
+           ", Colour: " + colour + ", Position: (" + std::to_string(position_x) + ", " + std::to_string(position_y) + ")"+'\n'+"Text: " + text;
+}
+
