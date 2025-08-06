@@ -2,19 +2,17 @@
 #define CARETAKER_H
 
 #include "Memento.h"
+#include <vector>
 
 class Caretaker {
     public:
-        Caretaker() {}
-        void storeMemento(Memento mem) {
-            this->mem= mem;
-        }
-        Memento retrieveMemento() {
-            return mem;
-        }
+        Caretaker();
+        ~Caretaker();
+        void storeMemento(Memento* mem);
+        Memento* retrieveMemento();
 
     private:
-        Memento mem;
+        std::vector<Memento*> store;
 };
 
 #endif
