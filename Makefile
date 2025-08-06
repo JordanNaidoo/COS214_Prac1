@@ -16,7 +16,10 @@ SOURCES = TestingMain.cpp \
           TextboxFactory.cpp \
           Canvas.cpp \
           Memento.cpp \
-          Caretaker.cpp 
+          Caretaker.cpp \
+          ExportCanvas.cpp \
+          PNGExporter.cpp \
+          PDFExporter.cpp \
 
 
 # Object files

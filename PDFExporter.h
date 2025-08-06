@@ -10,7 +10,7 @@ class PDFExporter : public ExportCanvas {
 		void saveToFile() override;
 
 	public:
-		PDFExporter(Canvas* c) : ExportCanvas(c) {};
+		PDFExporter(Canvas* c);
 };
 
 #endif

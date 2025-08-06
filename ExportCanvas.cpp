@@ -2,7 +2,7 @@
 
 
 ExportCanvas::ExportCanvas(Canvas* c){
-	if (canvas) canvas = c;
+	if (c) canvas = c;
 }
 
 void ExportCanvas::exportToFile() {

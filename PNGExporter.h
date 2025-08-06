@@ -9,7 +9,7 @@ class PNGExporter : public ExportCanvas {
 		void renderElements() override;
 		void saveToFile() override;
 	public:
-		PNGExporter(Canvas* c) : ExportCanvas(c) {};
+		PNGExporter(Canvas* c);
 };
 
 #endif

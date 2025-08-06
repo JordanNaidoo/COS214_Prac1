@@ -4,7 +4,7 @@
 #include "Canvas.h"
 
 class ExportCanvas{
-	protected:
+	private:
 		Canvas *canvas;
 		virtual void prepareCanvas()=0;
 		virtual void renderElements()=0;
@@ -12,6 +12,7 @@ class ExportCanvas{
 
 	public:
 		ExportCanvas(Canvas* c);
+		~ExportCanvas(){};
 		void exportToFile();
 };
 
