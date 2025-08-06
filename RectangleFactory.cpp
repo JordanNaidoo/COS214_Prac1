@@ -1,11 +1,10 @@
 #include "RectangleFactory.h"
 
 Shape* RectangleFactory::createShape() {
-	// TODO - implement RectangleFactory::createShape
-	throw "Not yet implemented";
+	std::cout << "A Rectangle was created" << std::endl;
+	return new Rectangle;
 }
 
 void RectangleFactory::toString() {
-	// TODO - implement RectangleFactory::toString
-	throw "Not yet implemented";
+	std::cout << "RectangleFactory: Creating a Rectangle..." << std::endl;
 }

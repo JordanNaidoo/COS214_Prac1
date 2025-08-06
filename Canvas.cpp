@@ -1,6 +1,5 @@
 #include "Canvas.h"
-#include "Shape.h"
-#include "Memento.h"
+
 
 Canvas::Canvas() {}
 

@@ -24,6 +24,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 
 # Header files (for dependency tracking)
 HEADERS = Canvas.h \
+          Caretaker.h \
           ExportCanvas.h \
           Memento.h \
           PNGExporter.h \
