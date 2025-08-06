@@ -14,6 +14,10 @@ public:
 	Shape* clone();
 	std::string render();
 	void setText(string text);
+	string getText() const {
+		return text;
+	}
+	
 };
 
 #endif
