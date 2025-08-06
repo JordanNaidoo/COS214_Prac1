@@ -7,16 +7,11 @@ using namespace std;
 
 class Rectangle : public Shape {
 
-private:
-	int length;
-	int width;
-	std::string colour;
-	int position_x;
-	int position_y;
-
 public:
+	Rectangle();
 	Rectangle(int length, int width, string colour, int position_x, int position_y);
 	Shape* clone();
+	std::string render();
 };
 
 #endif

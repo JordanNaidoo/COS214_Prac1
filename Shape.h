@@ -5,7 +5,7 @@
 using namespace std;
 
 class Shape {
-	private:
+	protected:
 		int length;
 		int width;
 		string colour;
@@ -13,6 +13,7 @@ class Shape {
 		int position_y;
 
 	public:
+		Shape(){};
 		Shape(int length, int width, string colour, int position_x, int position_y) {
 			this->length = length;
 			this->width = width;
@@ -20,7 +21,30 @@ class Shape {
 			this->position_x = position_x;
 			this->position_y = position_y;
 		}
+
 		virtual Shape* clone() = 0;
+		virtual std::string render() = 0;
+	
+		void setLength(int length) {
+			this->length = length;
+		}
+		
+		void setWidth(int width) {
+			this->width = width;
+		}
+		
+		void setColour(string colour) {
+			this->colour = colour;
+		}
+		
+		void setPositionX(int position_x) {
+			this->position_x = position_x;
+		}
+		
+		void setPositionY(int position_y) {
+			this->position_y = position_y;
+		}
+		
 };
 
 #endif

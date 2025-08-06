@@ -5,16 +5,11 @@
 
 class Square : public Shape {
 
-private:
-	int length;
-	int width;
-	string colour;
-	int position_x;
-	int position_y;
-
 public:
+	Square();
 	Square(int sidesize, string colour, int position_x, int position_y);
 	Shape* clone();
+	std::string render();
 };
 
 #endif
