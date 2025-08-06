@@ -9,9 +9,9 @@ class Canvas {
 
 	private:
 		std::vector<Shape*> shapes;
-		~Canvas();
-	public:
+		public:
 		Canvas();
+		~Canvas();
 		Memento* captureCurrent(); //create memento
 		bool addShape(Shape* shape);
 		void undoAction(Memento* prev); //set memento

@@ -12,7 +12,7 @@ Canvas::~Canvas() {
 
 bool Canvas::addShape(Shape* shape) {
 	if (shape) {
-		shapes.push_back(shape);  //should we also create a new memento or is that main's job?
+		shapes.push_back(shape);  
 		return true;
 	}
 	return false;
