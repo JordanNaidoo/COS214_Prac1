@@ -4,9 +4,13 @@
 #include "ExportCanvas.h"
 
 class PDFExporter : public ExportCanvas {
+	private:
+		void prepareCanvas() override;
+		void renderElements() override;
+		void saveToFile() override;
 
-private:
-	void saveToFile();
+	public:
+		PDFExporter(Canvas* c) : ExportCanvas(c) {};
 };
 
 #endif
