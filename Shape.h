@@ -14,6 +14,7 @@ class Shape {
 
 	public:
 		Shape(){};
+		virtual ~Shape(){};
 		Shape(int length, int width, string colour, int position_x, int position_y) {
 			this->length = length;
 			this->width = width;

@@ -1,11 +1,11 @@
 #include "SquareFactory.h"
 
 Shape* SquareFactory::createShape() {
-	// TODO - implement SquareFactory::createShape
-	throw "Not yet implemented";
+	std::cout << "A Square was created" << std::endl;
+	return new Square;
 }
 
 void SquareFactory::toString() {
-	// TODO - implement SquareFactory::toString
-	throw "Not yet implemented";
+	std::cout << "SquareFactory: Creating a Square" << std::endl;
 }
+

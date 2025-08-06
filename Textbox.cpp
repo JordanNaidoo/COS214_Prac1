@@ -25,8 +25,8 @@ Shape *Textbox::clone()
 std::string Textbox::render()
 {
     std::string output = "";
-    for (int i = 0; i < length; i++) {
-        for (int j = 0; j < (width*2) ; j++)
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < (length*2) ; j++)
             output += "░";
         output += "\n";
     }

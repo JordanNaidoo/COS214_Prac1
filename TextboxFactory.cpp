@@ -1,11 +1,10 @@
 #include "TextboxFactory.h"
 
 Shape* TextboxFactory::createShape() {
-	// TODO - implement TextboxFactory::createShape
-	throw "Not yet implemented";
+	std::cout << "A Textbox was created" << std::endl;
+	return new Textbox; 
 }
 
 void TextboxFactory::toString() {
-	// TODO - implement TextboxFactory::toString
-	throw "Not yet implemented";
+	std::cout << "TextboxFactory: Creating a Textbox" << std::endl;
 }
