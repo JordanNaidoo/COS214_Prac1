@@ -1,4 +1,14 @@
 #include <iostream>
+
+#include "Canvas.h"
+#include "Caretaker.h"
+#include "Shape.h"
+#include "Memento.h"
+#include "Rectangle.h"
+#include "Square.h"
+#include "PDFExporter.h"
+#include "PNGExporter.h"
+
 using namespace std;
 #include "Shape.h"
 #include "Rectangle.h"
@@ -136,8 +146,9 @@ void testShapeFactory() {
     std::cout << "=== Factory Testing Complete ===" << std::endl;
 }
 
-int main()
+void mementotest()
 {
+
     // testShapeCreation();
     testShapeFactory();
        return 0;
@@ -176,6 +187,26 @@ void test2()
     cout << "Shapes after third undo: " << canvas.getShapeCount() << endl;
 
     cout << "Memento pattern extensive test complete." << endl;
+}
+
+void exportTest()
+{
+    Canvas exportCanvas;
+    exportCanvas.addShape(new Rectangle(10, 20, "red", 0, 0));
+    exportCanvas.addShape(new Square(30, "blue", 5, 5));
+
+    // Export to PDF
+    PDFExporter pdfExporter(&exportCanvas);
+    pdfExporter.exportToFile();
+
+    // Export to PNG
+    PNGExporter pngExporter(&exportCanvas);
+    pngExporter.exportToFile();
+}
+
+int main(){
+
+    exportTest();
 
  
 }
