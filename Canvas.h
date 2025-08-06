@@ -15,6 +15,7 @@ class Canvas {
 		Memento* captureCurrent(); //create memento
 		bool addShape(Shape* shape);
 		void undoAction(Memento* prev); //set memento
+		int getShapeCount() const; 
 };
 
 #endif

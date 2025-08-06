@@ -15,6 +15,7 @@ class Shape {
 	public:
 		Shape(){};
 		virtual ~Shape(){};
+
 		Shape(int length, int width, string colour, int position_x, int position_y) {
 			this->length = length;
 			this->width = width;
@@ -22,6 +23,7 @@ class Shape {
 			this->position_x = position_x;
 			this->position_y = position_y;
 		}
+		
 
 		virtual Shape* clone() = 0;
 		virtual std::string render() = 0;

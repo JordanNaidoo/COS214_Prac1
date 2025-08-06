@@ -1,19 +1,23 @@
+# sudo apt install valgrind 
+# valgrind --leak-check=full ./demo
+
 # Compiler and flags
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Wextra -g
 LDFLAGS =
 
 # Source files (all .cpp files in the project)
-SOURCES = DemoMain.cpp \
-          Canvas.cpp \
-          Caretaker.cpp \
-          Memento.cpp \
+SOURCES = TestingMain.cpp \
           Rectangle.cpp \
           RectangleFactory.cpp \
           Square.cpp \
           SquareFactory.cpp \
           Textbox.cpp \
-          TextboxFactory.cpp
+          TextboxFactory.cpp \
+          Canvas.cpp \
+          Memento.cpp \
+          Caretaker.cpp 
+
 
 # Object files
 OBJECTS = $(SOURCES:.cpp=.o)
