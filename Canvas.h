@@ -9,7 +9,7 @@ class Canvas {
 
 	private:
 		std::vector<Shape*> shapes;
-		public:
+	public:
 		Canvas();
 		~Canvas();
 		Memento* captureCurrent(); //create memento

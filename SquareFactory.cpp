@@ -6,6 +6,6 @@ Shape* SquareFactory::createShape() {
 }
 
 void SquareFactory::toString() {
-	std::cout << "SquareFactory: Creating a Square" << std::endl;
+	std::cout << "SquareFactory: Creating a Square..." << std::endl;
 }
 

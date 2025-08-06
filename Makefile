@@ -5,6 +5,9 @@ LDFLAGS =
 
 # Source files (all .cpp files in the project)
 SOURCES = DemoMain.cpp \
+          Canvas.cpp \
+          Caretaker.cpp \
+          Memento.cpp \
           Rectangle.cpp \
           RectangleFactory.cpp \
           Square.cpp \
@@ -17,6 +20,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 
 # Header files (for dependency tracking)
 HEADERS = Canvas.h \
+          Caretaker.h \
           ExportCanvas.h \
           Memento.h \
           PNGExporter.h \

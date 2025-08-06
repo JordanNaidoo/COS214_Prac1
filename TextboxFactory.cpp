@@ -6,5 +6,5 @@ Shape* TextboxFactory::createShape() {
 }
 
 void TextboxFactory::toString() {
-	std::cout << "TextboxFactory: Creating a Textbox" << std::endl;
+	std::cout << "TextboxFactory: Creating a Textbox..." << std::endl;
 }

@@ -6,5 +6,5 @@ Shape* RectangleFactory::createShape() {
 }
 
 void RectangleFactory::toString() {
-	std::cout << "RectangleFactory: Creating a Rectangle" << std::endl;
+	std::cout << "RectangleFactory: Creating a Rectangle..." << std::endl;
 }

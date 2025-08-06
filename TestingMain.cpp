@@ -139,7 +139,6 @@ int main()
 {
     // testShapeCreation();
     testShapeFactory();
-    std::cout << "=== Factory Testing Complete ===" << std::endl;
     
     return 0;
 }
