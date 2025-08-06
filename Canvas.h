@@ -16,6 +16,7 @@ class Canvas {
 		bool addShape(Shape* shape);
 		void undoAction(Memento* prev); //set memento
 		int getShapeCount() const; 
+		std::string toString() const;
 };
 
 #endif

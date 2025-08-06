@@ -37,3 +37,11 @@ void Canvas::undoAction(Memento* prev) {
 		delete prev; 
 	}
 }
+
+std::string Canvas::toString() const {
+	std::string output = "Canvas contains:\n";
+	for (const Shape* s : shapes) {
+		output += "- " + s->toString() + "\n";
+	}
+	return output;
+}

@@ -32,7 +32,11 @@ void testShapeCreation()
     temp2->setText("Hello World");
     std::cout << temp2->render() << std::endl;
     std::cout << temp2->toString() << std::endl;
+
+    delete temp;
+    delete temp2;
 }
+
 void testShapeFactory()
 {
     std::cout << "=== Factory Pattern Testing ===" << std::endl;
@@ -174,6 +178,7 @@ void mementotest()
 {
     testShapeFactory();
 }
+
 void test2()
 {
 
@@ -225,9 +230,23 @@ void exportTest()
     pngExporter.exportToFile();
 }
 
+void testCanvas()
+{
+    Canvas canvas;
+    std::cout << "Canvas created." << std::endl;
+    std::cout << "Adding shapes to canvas..." << std::endl;
+    canvas.addShape(new Rectangle(10, 20, "red", 0, 0));
+    canvas.addShape(new Square(30, "blue", 5, 5));
+    canvas.addShape(new Textbox(15, 25, "green", 2, 2, "I love my gf!"));
+    std::cout << canvas.toString() << std::endl;
+    std::cout << "Total shapes in canvas: " << canvas.getShapeCount() << std::endl;
+
+}
+
 int main()
 {
-    // exportTest();
-    testShapeCreation();
+    exportTest();
+    // testShapeCreation();
+    // testCanvas();
 
 }

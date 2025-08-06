@@ -5,10 +5,11 @@
 
 class ExportCanvas{
 	private:
-		Canvas *canvas;
 		virtual void prepareCanvas()=0;
 		virtual void renderElements()=0;
 		virtual void saveToFile() = 0;
+	protected:
+		Canvas* canvas;	
 
 	public:
 		ExportCanvas(Canvas* c);
