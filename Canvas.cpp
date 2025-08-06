@@ -10,6 +10,10 @@ Canvas::~Canvas() {
 	shapes.clear();
 }
 
+int Canvas::getShapeCount() const {
+	return shapes.size();
+}
+
 bool Canvas::addShape(Shape* shape) {
 	if (shape) {
 		shapes.push_back(shape);  
