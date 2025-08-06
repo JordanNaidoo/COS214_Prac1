@@ -23,10 +23,17 @@ Shape *Rectangle::clone()
 std::string Rectangle::render()
 {
     std::string output = "";
-    for (int i = 0; i < width; i++) {
-        for (int j = 0; j < (length*2) ; j++)
+    for (int i = 0; i < width; i++)
+    {
+        for (int j = 0; j < (length * 2); j++)
             output += "░";
         output += "\n";
     }
     return output;
+}
+
+std::string Rectangle::toString() const
+{
+    return "Shape type: Rectangle, length:" + std::to_string(length) + ", width:" + std::to_string(width) +
+           ", Colour: " + colour + ", Position: (" + std::to_string(position_x) + ", " + std::to_string(position_y) + ")";
 }

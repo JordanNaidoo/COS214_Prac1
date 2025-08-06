@@ -23,11 +23,17 @@ Shape *Square::clone()
 std::string Square::render()
 {
     std::string output = "";
-    for (int i = 0; i < length; i++) {
-        for (int j = 0; j < (length*2) ; j++)
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = 0; j < (length * 2); j++)
             output += "░";
         output += "\n";
     }
     return output;
 }
 
+std::string Square::toString() const
+{
+    return "Shape type: Square, length:" + std::to_string(length) +
+           ", Colour: " + colour + ", Position: (" + std::to_string(position_x) + ", " + std::to_string(position_y) + ")";
+}

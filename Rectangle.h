@@ -10,6 +10,7 @@ class Rectangle : public Shape {
 public:
 	Rectangle();
 	Rectangle(int length, int width, string colour, int position_x, int position_y);
+	std::string toString() const override;
 	Shape* clone();
 	std::string render();
 };

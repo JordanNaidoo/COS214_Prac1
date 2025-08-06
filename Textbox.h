@@ -11,6 +11,7 @@ private:
 public:
 	Textbox();
 	Textbox(int length, int width, string colour, int position_x, int position_y, string text);
+	std::string toString() const override;
 	Shape* clone();
 	std::string render();
 	void setText(string text);
