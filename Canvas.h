@@ -3,16 +3,18 @@
 
 #include "Shape.h"
 #include "Memento.h"
+#include <vector>
 
 class Canvas {
 
-private:
-	Shape* shapes;
-
-public:
-	Memento* captureCurrent();
-
-	void undoAction(Memento* prev);
+	private:
+		std::vector<Shape*> shapes;
+		public:
+		Canvas();
+		~Canvas();
+		Memento* captureCurrent(); //create memento
+		bool addShape(Shape* shape);
+		void undoAction(Memento* prev); //set memento
 };
 
 #endif
