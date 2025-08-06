@@ -6,15 +6,14 @@
 class Textbox : public Shape {
 
 private:
-	int length;
-	int width;
-	string colour;
-	int position_x;
-	int position_y;
 	string text;
 
 public:
+	Textbox();
+	Textbox(int length, int width, string colour, int position_x, int position_y, string text);
 	Shape* clone();
+	std::string render();
+	void setText(string text);
 };
 
 #endif
