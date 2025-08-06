@@ -1,7 +1,6 @@
 #ifndef MEMENTO_H
 #define MEMENTO_H
 #include "Shape.h"
-#include "Canvas.h"
 #include <vector>
 
 class Canvas;
@@ -13,7 +12,7 @@ class Memento {
 		
 		public:
 		Memento(std::vector<Shape*> elements);
-		virtual ~Memento() {}
+		virtual ~Memento();
 };
 
 #endif
