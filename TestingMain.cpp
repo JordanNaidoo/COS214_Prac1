@@ -176,7 +176,31 @@ void testShapeFactory()
 
 void mementotest()
 {
-    testShapeFactory();
+    // Memento testing code goes here
+    std::cout << "=== Memento Pattern Testing ===" << std::endl;
+    std::cout << "Creating a canvas and adding shapes..." << std::endl;
+    Canvas canvas;
+    canvas.addShape(new Rectangle(10, 20, "red", 0, 0));
+    canvas.addShape(new Square(30, "blue", 5, 5));
+    std::cout << "Shapes added to canvas." << std::endl;
+    std::cout << "Current canvas state:\n" << canvas.toString() << std::endl;
+    Caretaker caretaker;
+    caretaker.storeMemento(canvas.captureCurrent());
+    std::cout << "Canvas state captured in memento." << std::endl;
+
+    // Add another shape
+    canvas.addShape(new Rectangle(15, 25, "green", 2, 2));
+    std::cout << "Added another shape. Current canvas state:\n" << canvas.toString() << std::endl;
+    caretaker.storeMemento(canvas.captureCurrent());
+
+    // Undo last action
+    canvas.undoAction(caretaker.retrieveMemento());
+    std::cout << "Undo last action. Current canvas state:\n" << canvas.toString() << std::endl;
+    caretaker.storeMemento(canvas.captureCurrent());
+    // Undo again
+    canvas.undoAction(caretaker.retrieveMemento());
+    std::cout << "Undo again. Current canvas state:\n" << canvas.toString() << std::endl;
+    
 }
 
 void test2()
