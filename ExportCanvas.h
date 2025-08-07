@@ -13,7 +13,12 @@ class ExportCanvas{
 
 	public:
 		ExportCanvas(Canvas* c);
-		~ExportCanvas(){};
+		~ExportCanvas(){
+			if (canvas) {
+				delete canvas;
+				canvas = nullptr;
+			}
+		};
 		void exportToFile();
 };
 
