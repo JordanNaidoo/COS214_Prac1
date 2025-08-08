@@ -265,6 +265,11 @@ void testCanvas()
     std::cout << canvas.toString() << std::endl;
     std::cout << "Total shapes in canvas: " << canvas.getShapeCount() << std::endl;
 
+    std::cout<<"Testing blank canvas:" << std::endl;
+    Canvas blankCanvas;
+    std::cout << blankCanvas.toString() << std::endl;
+    std::cout << "Total shapes in canvas: " << blankCanvas.getShapeCount() << std::endl;
+
 }
 
 int main()

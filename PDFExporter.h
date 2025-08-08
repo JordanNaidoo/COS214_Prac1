@@ -11,6 +11,7 @@ class PDFExporter : public ExportCanvas {
 
 	public:
 		PDFExporter(Canvas* c);
+		~PDFExporter(){};
 };
 
 #endif

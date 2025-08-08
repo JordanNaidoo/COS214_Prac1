@@ -10,6 +10,7 @@ class PNGExporter : public ExportCanvas {
 		void saveToFile() override;
 	public:
 		PNGExporter(Canvas* c);
+		~PNGExporter(){};
 };
 
 #endif
