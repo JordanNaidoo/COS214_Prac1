@@ -39,6 +39,7 @@ void Canvas::undoAction(Memento* prev) {
 }
 
 std::string Canvas::toString() const {
+	if (shapes.empty()) return "Canvas is empty."; 
 	std::string output = "Canvas contains:\n";
 	for (const Shape* s : shapes) {
 		output += "- " + s->toString() + "\n";
