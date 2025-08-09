@@ -12,7 +12,7 @@ class Memento {
 		
 		public:
 		Memento(std::vector<Shape*> elements);
-		virtual ~Memento();
+		~Memento();
 };
 
 #endif

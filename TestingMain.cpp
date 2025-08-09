@@ -177,66 +177,28 @@ void testShapeFactory()
 void mementotest()
 {
     // Memento testing code goes here
-    std::cout << "=== Memento Pattern Testing ===" << std::endl;
-    std::cout << "Creating a canvas and adding shapes..." << std::endl;
+    cout << "=== Memento Pattern Testing ===" << endl;
+    cout << "Creating a canvas and adding shapes..." << endl;
     Canvas canvas;
-    canvas.addShape(new Rectangle(10, 20, "red", 0, 0));
-    canvas.addShape(new Square(30, "blue", 5, 5));
-    std::cout << "Shapes added to canvas." << std::endl;
-    std::cout << "Current canvas state:\n" << canvas.toString() << std::endl;
     Caretaker caretaker;
     caretaker.storeMemento(canvas.captureCurrent());
-    std::cout << "Canvas state captured in memento." << std::endl;
+    canvas.addShape(new Rectangle(10, 20, "red", 0, 0));
+    caretaker.storeMemento(canvas.captureCurrent());
+    canvas.addShape(new Square(30, "blue", 5, 5));
+    cout << "Shapes added to canvas." << endl;
+    cout <<canvas.toString() << endl;
 
-    // Add another shape
+    caretaker.storeMemento(canvas.captureCurrent());
     canvas.addShape(new Rectangle(15, 25, "green", 2, 2));
-    std::cout << "Added another shape. Current canvas state:\n" << canvas.toString() << std::endl;
-    caretaker.storeMemento(canvas.captureCurrent());
+    cout << "Shapes added to canvas." << endl;
+    cout <<canvas.toString() << endl;
 
-    // Undo last action
     canvas.undoAction(caretaker.retrieveMemento());
-    std::cout << "Undo last action. Current canvas state:\n" << canvas.toString() << std::endl;
-    caretaker.storeMemento(canvas.captureCurrent());
-    // Undo again
+    cout << "Undo last action. Current canvas state:\n" << canvas.toString() << endl;
+
     canvas.undoAction(caretaker.retrieveMemento());
-    std::cout << "Undo again. Current canvas state:\n" << canvas.toString() << std::endl;
+    cout << "Undo again. Current canvas state:\n" << canvas.toString() << endl;
     
-}
-
-void test2()
-{
-
-    // Memento testing: //////////////////////////////////////////////////
-    Canvas canvas;
-    Caretaker caretaker;
-
-    canvas.addShape(new Rectangle(10, 20, "red", 0, 0));
-    caretaker.storeMemento(canvas.captureCurrent());
-    cout << "Shapes after first add: " << canvas.getShapeCount() << endl;
-
-    // Add second shape and save state
-    canvas.addShape(new Square(30, "blue", 5, 5));
-    caretaker.storeMemento(canvas.captureCurrent());
-    cout << "Shapes after second add: " << canvas.getShapeCount() << endl;
-
-    // Add third shape and save state
-    canvas.addShape(new Rectangle(15, 25, "green", 2, 2));
-    caretaker.storeMemento(canvas.captureCurrent());
-    cout << "Shapes after third add: " << canvas.getShapeCount() << endl;
-
-    // Undo to previous state (should remove last shape)
-    canvas.undoAction(caretaker.retrieveMemento());
-    cout << "Shapes after first undo: " << canvas.getShapeCount() << endl;
-
-    // Undo again (should remove second shape)
-    canvas.undoAction(caretaker.retrieveMemento());
-    cout << "Shapes after second undo: " << canvas.getShapeCount() << endl;
-
-    // Undo again (should remove first shape, back to empty)
-    canvas.undoAction(caretaker.retrieveMemento());
-    cout << "Shapes after third undo: " << canvas.getShapeCount() << endl;
-
-    cout << "Memento pattern extensive test complete." << endl;
 }
 
 void exportTest()
@@ -245,11 +207,9 @@ void exportTest()
     exportCanvas.addShape(new Rectangle(10, 20, "red", 0, 0));
     exportCanvas.addShape(new Square(30, "blue", 5, 5));
 
-    // Export to PDF
     PDFExporter pdfExporter(&exportCanvas);
     pdfExporter.exportToFile();
 
-    // Export to PNG
     PNGExporter pngExporter(&exportCanvas);
     pngExporter.exportToFile();
 }
@@ -257,25 +217,27 @@ void exportTest()
 void testCanvas()
 {
     Canvas canvas;
-    std::cout << "Canvas created." << std::endl;
-    std::cout << "Adding shapes to canvas..." << std::endl;
+    cout << "Canvas created." << endl;
+    cout << "Adding shapes to canvas..." << endl;
     canvas.addShape(new Rectangle(10, 20, "red", 0, 0));
     canvas.addShape(new Square(30, "blue", 5, 5));
     canvas.addShape(new Textbox(15, 25, "green", 2, 2, "I love my gf!"));
-    std::cout << canvas.toString() << std::endl;
-    std::cout << "Total shapes in canvas: " << canvas.getShapeCount() << std::endl;
+    cout << canvas.toString() << endl;
+    cout << "Total shapes in canvas: " << canvas.getShapeCount() << endl;
 
-    std::cout<<"Testing blank canvas:" << std::endl;
+    cout<<"Testing blank canvas:" << endl;
     Canvas blankCanvas;
-    std::cout << blankCanvas.toString() << std::endl;
-    std::cout << "Total shapes in canvas: " << blankCanvas.getShapeCount() << std::endl;
+    cout << blankCanvas.toString() << endl;
+    cout << "Total shapes in canvas: " << blankCanvas.getShapeCount() << endl;
 
 }
 
 int main()
 {
     exportTest();
-    // testShapeCreation();
-    // testCanvas();
+    testShapeCreation();
+    testCanvas();
+    mementotest();
+    testShapeFactory();
 
 }
