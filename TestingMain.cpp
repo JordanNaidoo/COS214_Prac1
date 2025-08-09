@@ -149,7 +149,6 @@ void testShapeFactory()
                   << originalRect->render() << std::endl;
 
         Shape *clonedRect = originalRect->clone();
-        // change details of the cloned rectangle
         if (clonedRect)
         {
             std::cout << "Cloned: \n"
@@ -176,7 +175,6 @@ void testShapeFactory()
 
 void mementotest()
 {
-    // Memento testing code goes here
     cout << "=== Memento Pattern Testing ===" << endl;
     cout << "Creating a canvas and adding shapes..." << endl;
     Canvas canvas;

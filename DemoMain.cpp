@@ -15,11 +15,9 @@
 #include "PDFExporter.h"
 #include "PNGExporter.h"
 
-//to do
-// - export option --> png or pdf
 
-Canvas* canvas; // Canvas instance to manage shapes
-Caretaker* caretaker; // Caretaker to manage mementos
+Canvas* canvas; 
+Caretaker* caretaker; 
 
 void displayMenu() {
     std::cout << "\n=== OpenCanvas Operations ===" << std::endl;
@@ -47,7 +45,6 @@ void displayShapeDetails(Shape* shape, const std::string& shapeType) {
     std::cout << "4. Position X: " << shape->getPositionX() << std::endl;
     std::cout << "5. Position Y: " << shape->getPositionY() << std::endl;
     
-    // Special case for Textbox - show text option
     if (shapeType == "Textbox") {
         Textbox* textbox = dynamic_cast<Textbox*>(shape);
         if (textbox) {
@@ -104,14 +101,13 @@ void editShapeAttribute(Shape* shape, int choice, const std::string& shapeType) 
             break;
         }
         case 6: {
-            // Special case for Textbox text editing
             if (shapeType == "Textbox") {
                 Textbox* textbox = dynamic_cast<Textbox*>(shape);
                 if (textbox) {
                     std::string newText;
                     std::cout << "Enter new text: ";
-                    std::cin.ignore(); // Clear the newline from previous input
-                    std::getline(std::cin, newText); // Allow spaces in text
+                    std::cin.ignore();
+                    std::getline(std::cin, newText);
                     textbox->setText(newText);
                     std::cout << "Text updated to: " << newText << std::endl;
                 }
@@ -127,21 +123,21 @@ Shape* createShape(int shapeChoice) {
     switch(shapeChoice) {
         case 1: {
             RectangleFactory* factory = new RectangleFactory();
-            factory->toString(); // Print creating message
+            factory->toString();
             newShape = factory->createShape();
             delete factory;
             break;
         }
         case 2: {
             SquareFactory* factory = new SquareFactory();
-            factory->toString(); // Print creating message
+            factory->toString();
             newShape = factory->createShape();
             delete factory;
             break;
         }
         case 3: {
             TextboxFactory* factory = new TextboxFactory();
-            factory->toString(); // Print creating message
+            factory->toString();
             newShape = factory->createShape();
             delete factory;
             break;
@@ -175,7 +171,6 @@ void addShape() {
     std::string shapeTypes[] = {"Rectangle", "Square", "Textbox"};
     std::string currentShapeType = shapeTypes[shapeChoice - 1];
     
-    // Add shape to canvas using Canvas class method
     bool success = canvas->addShape(newShape);
     if (success) {
         std::cout << currentShapeType << " added to canvas!" << std::endl;
@@ -185,7 +180,6 @@ void addShape() {
         return;
     }
     
-    // Ask if user wants to edit details
     char editChoice;
     std::cout << "Would you like to edit the details of this " << currentShapeType << "? (y/n): ";
     std::cin >> editChoice;
@@ -210,13 +204,11 @@ void addShape() {
         } while (attributeChoice != maxChoice);
     }
     
-    // Show final shape
     std::cout << "\nFinal " << currentShapeType << ":" << std::endl;
     std::cout << newShape->render() << std::endl;
 }
 
 void undoLastAction() {
-    // Ask caretaker for the most recent memento
     Memento* lastState = caretaker->retrieveMemento();
     
     if (!lastState) {
@@ -224,7 +216,6 @@ void undoLastAction() {
         return;
     }
     
-    // Tell canvas to undo using the memento
     canvas->undoAction(lastState);
     std::cout << "Last action undone." << std::endl;
 }
@@ -263,7 +254,6 @@ int main()
 {
     std::cout << "Welcome to OpenCanvas!" << std::endl;
     
-    // Initialize canvas and caretaker
     canvas = new Canvas();
     caretaker = new Caretaker();
     
@@ -305,9 +295,8 @@ int main()
         }
     }
     
-    // Clean up memory
-    delete canvas; // Canvas destructor will clean up all shapes
-    delete caretaker; // Caretaker destructor will clean up all mementos
+    delete canvas;
+    delete caretaker;
     
     return 0;
 }
