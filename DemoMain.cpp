@@ -272,7 +272,16 @@ int main()
     
     while (running) {
         displayMenu();
-        std::cin >> choice;
+
+        std::string input;
+        std::cin >> input;
+
+        try {
+            choice = std::stoi(input); 
+        } catch (...) {
+            std::cout << "Invalid input! Please enter a number between 1-5.\n";
+            continue;
+        }
         
         switch (choice) {
             case 1:
@@ -292,7 +301,7 @@ int main()
                 running = false;
                 break;
             default:
-                std::cout << "Invalid choice! Please enter a number between 1-4." << std::endl;
+                std::cout << "Invalid choice! Please enter a number between 1-5." << std::endl;
         }
     }
     
