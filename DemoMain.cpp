@@ -11,6 +11,9 @@
 #include "Canvas.h"
 #include "Memento.h"
 #include "Caretaker.h"
+#include "ExportCanvas.h"
+#include "PDFExporter.h"
+#include "PNGExporter.h"
 
 //to do
 // - export option --> png or pdf
@@ -22,9 +25,10 @@ void displayMenu() {
     std::cout << "\n=== OpenCanvas Operations ===" << std::endl;
     std::cout << "1. Add Shape" << std::endl;
     std::cout << "2. Undo" << std::endl;
-    std::cout << "3. Export Canvas" << std::endl;
-    std::cout << "4. Exit" << std::endl;
-    std::cout << "Enter your choice (1-4): ";
+    std::cout << "3. View Canvas" << std::endl;
+    std::cout << "4. Export Canvas" << std::endl;
+    std::cout << "5. Exit" << std::endl;
+    std::cout << "Enter your choice (1-5): ";
 }
 
 void displayShapeMenu() {
@@ -226,13 +230,33 @@ void undoLastAction() {
 }
 
 void exportCanvas() {
+
     std::cout << "\n=== Canvas Export ===" << std::endl;
-    std::cout << "Canvas export functionality will display all shapes." << std::endl;
-    std::cout << "Note: Canvas contents cannot be displayed directly with current Canvas implementation." << std::endl;
-    std::cout << "Consider adding a displayCanvas() method to the Canvas class for full export functionality." << std::endl;
-    
-    // Future implementation for PNG/PDF export
-    std::cout << "Export formats (PNG/PDF) will be implemented in future versions." << std::endl;
+    std::cout <<canvas->toString() << std::endl;
+    std::cout<<"Would you like to export the canvas to:"<<std::endl;
+    std::cout << "1. PDF" << std::endl;
+    std::cout << "2. PNG" << std::endl;
+    int format;
+    std::cin >> format;
+    if (format==1){
+        std::cout << "Exporting canvas to PDF format." << std::endl;
+        PDFExporter pdfExporter(canvas);
+        pdfExporter.exportToFile();
+
+    }else if (format==2){
+        std::cout << "Exporting canvas to PNG format." << std::endl;
+        PNGExporter pngExporter(canvas);
+        pngExporter.exportToFile();
+    }
+
+}
+
+void viewCanvas(){
+    std::cout << "\n=== Current Canvas Contents ===" << std::endl;
+    std::cout<<canvas->toString()<<std::endl;
+
+    std::cout<<"Number of shapes: "<<canvas->getShapeCount()<<std::endl;
+
 }
 
 int main()
@@ -248,7 +272,16 @@ int main()
     
     while (running) {
         displayMenu();
-        std::cin >> choice;
+
+        std::string input;
+        std::cin >> input;
+
+        try {
+            choice = std::stoi(input); 
+        } catch (...) {
+            std::cout << "Invalid input! Please enter a number between 1-5.\n";
+            continue;
+        }
         
         switch (choice) {
             case 1:
@@ -257,15 +290,18 @@ int main()
             case 2:
                 undoLastAction();
                 break;
-            case 3:
-                exportCanvas();
+            case 3: 
+                viewCanvas();
                 break;
             case 4:
+                exportCanvas();
+                break;
+            case 5:
                 std::cout << "Thank you for using OpenCanvas! Goodbye!" << std::endl;
                 running = false;
                 break;
             default:
-                std::cout << "Invalid choice! Please enter a number between 1-4." << std::endl;
+                std::cout << "Invalid choice! Please enter a number between 1-5." << std::endl;
         }
     }
     
