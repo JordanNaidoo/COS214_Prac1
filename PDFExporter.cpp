@@ -19,4 +19,5 @@ void PDFExporter::saveToFile() {
     string where;
     cin >> where;
     cout << "Saving PDF file to " << where << "..." << endl;
+    cout<<"PDF file saved to "<<where<<endl;
 }

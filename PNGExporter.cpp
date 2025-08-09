@@ -18,5 +18,6 @@ void PNGExporter::saveToFile() {
     cout<<"Where would you like to save the PNG file?"<<endl;
     string where;
     cin >> where;
-    cout << "Saving PNG file to " << where << "..." << endl;
+    cout << "Saving PNG file to " << where <<"..." << endl;
+    cout<<"PNG file saved to "<<where<<endl;
 }

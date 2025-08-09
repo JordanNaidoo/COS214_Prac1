@@ -41,6 +41,6 @@ void Textbox::setText(string text)
 std::string Textbox::toString() const
 {
     return "Shape type: Textbox, length:" + std::to_string(length) + ", width:" + std::to_string(width) +
-           ", Colour: " + colour + ", Position: (" + std::to_string(position_x) + ", " + std::to_string(position_y) + ") Text: " + text;
+           ", Colour: " + colour + ", Position: (" + std::to_string(position_x) + ", " + std::to_string(position_y) + ") Text: " + ((text!="Enter text here" )? text:"*empty*");
 }
 
