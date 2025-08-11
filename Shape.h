@@ -17,11 +17,7 @@ protected:
 public:
 	Shape() {};
 	virtual ~Shape() {};
-	virtual std::string toString() const
-	{
-		return "Shape type: Shape, length:" + std::to_string(length) +", width:"+std::to_string(width)+
-		", Colour: " + colour + ", Position: (" + std::to_string(position_x) + ", " + std::to_string(position_y) + ")";
-	};
+	virtual std::string toString() const = 0;
 
 	Shape(int length, int width, string colour, int position_x, int position_y)
 	{
