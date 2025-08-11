@@ -231,11 +231,6 @@ void testCanvas()
 }
 
 
-void objectDiagram(){
-
-}
-
-
 int main()
 {
     exportTest();
