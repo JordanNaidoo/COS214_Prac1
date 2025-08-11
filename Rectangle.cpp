@@ -29,7 +29,7 @@ std::string Rectangle::render()
             output += "░";
         output += "\n";
     }
-    return output;
+    return output + toString() + "\n";
 }
 
 std::string Rectangle::toString() const

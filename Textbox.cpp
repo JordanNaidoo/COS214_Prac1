@@ -30,7 +30,7 @@ std::string Textbox::render()
             output += "░";
         output += "\n";
     }
-    return output;
+    return output + toString() + "\n";
 }
 
 void Textbox::setText(string text)

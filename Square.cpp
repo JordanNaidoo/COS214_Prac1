@@ -29,7 +29,7 @@ std::string Square::render()
             output += "░";
         output += "\n";
     }
-    return output;
+    return output + toString() + "\n";
 }
 
 std::string Square::toString() const
