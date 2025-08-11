@@ -143,7 +143,7 @@ Shape* createShape(int shapeChoice) {
             break;
         }
         default:
-            std::cout << "Invalid shape choice!" << std::endl;
+            std::cout << "Invalid shape choice." << std::endl;
     }
     
     return newShape;
@@ -158,13 +158,13 @@ void addShape() {
     std::cin >> shapeChoice;
     
     if (shapeChoice < 1 || shapeChoice > 3) {
-        std::cout << "Invalid choice! Please try again." << std::endl;
+        std::cout << "Invalid choice. Please pick again." << std::endl;
         return;
     }
     
     Shape* newShape = createShape(shapeChoice);
     if (!newShape) {
-        std::cout << "Failed to create shape!" << std::endl;
+        std::cout << "Failed to create shape." << std::endl;
         return;
     }
     
@@ -173,9 +173,9 @@ void addShape() {
     
     bool success = canvas->addShape(newShape);
     if (success) {
-        std::cout << currentShapeType << " added to canvas!" << std::endl;
+        std::cout << currentShapeType << " added to canvas." << std::endl;
     } else {
-        std::cout << "Failed to add " << currentShapeType << " to canvas!" << std::endl;
+        std::cout << "Failed to add " << currentShapeType << " to canvas." << std::endl;
         delete newShape;
         return;
     }
@@ -199,7 +199,7 @@ void addShape() {
                 std::cout << "Finished editing " << currentShapeType << "." << std::endl;
                 break;
             } else {
-                std::cout << "Invalid choice! Please try again." << std::endl;
+                std::cout << "Invalid choice. Please pick again." << std::endl;
             }
         } while (attributeChoice != maxChoice);
     }
@@ -212,7 +212,7 @@ void undoLastAction() {
     Memento* lastState = caretaker->retrieveMemento();
     
     if (!lastState) {
-        std::cout << "No actions to undo!" << std::endl;
+        std::cout << "No actions to undo." << std::endl;
         return;
     }
     
@@ -269,7 +269,7 @@ int main()
         try {
             choice = std::stoi(input); 
         } catch (...) {
-            std::cout << "Invalid input! Please enter a number between 1-5.\n";
+            std::cout << "Invalid input. Please enter a number between 1-5.\n";
             continue;
         }
         
@@ -287,11 +287,11 @@ int main()
                 exportCanvas();
                 break;
             case 5:
-                std::cout << "Thank you for using OpenCanvas! Goodbye!" << std::endl;
+                std::cout << "Thank you for using OpenCanvas. Goodbye." << std::endl;
                 running = false;
                 break;
             default:
-                std::cout << "Invalid choice! Please enter a number between 1-5." << std::endl;
+                std::cout << "Invalid. Please enter a number between 1-5." << std::endl;
         }
     }
     
