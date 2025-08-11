@@ -8,7 +8,6 @@ class ExportCanvas{
 		virtual void prepareCanvas()=0;
 		virtual void renderElements()=0;
 		virtual void saveToFile() = 0;
-	protected:
 		Canvas* canvas;	
 
 	public:
